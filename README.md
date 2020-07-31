@@ -28,18 +28,15 @@ Or just download it and place it where you want otherwise.
 
 
 
-Summary
-===========
-- [JBee api](https://github.com/lingtalfi/JBee/blob/master/doc/api/Ling/JBee.md) (generated with [DocTools](https://github.com/lingtalfi/DocTools))
-
-
-
-
 
 
 History Log
 =============
 
+- 1.0.1 -- 2020-07-31
+
+    - fix doc
+    
 - 1.0.0 -- 2020-07-31
 
     - initial commit
