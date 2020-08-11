@@ -267,12 +267,49 @@ if ('undefined' === typeof window.bee) {
             }
             return true;
         },
+        /**
+         * Returns true if the value is an integer, or a string that looks like an integer.
+         *
+         * console.log(isIntegerLike(""));              // false
+         * console.log(isIntegerLike(false));           // false
+         * console.log(isIntegerLike(true));            // false
+         * console.log(isIntegerLike("0"));             // true
+         * console.log(isIntegerLike("0.1"));           // false
+         * console.log(isIntegerLike("12"));            // true
+         * console.log(isIntegerLike("-12"));           // true
+         * console.log(isIntegerLike(-45));             // true
+         * console.log(isIntegerLike({jo: "pi"}));      // false
+         * console.log(isIntegerLike([]));              // false
+         * console.log(isIntegerLike([78, 79]));        // false
+         * console.log(isIntegerLike(NaN));             // false
+         * console.log(isIntegerLike(Infinity));        // false
+         * console.log(isIntegerLike(undefined));       // false
+         * console.log(isIntegerLike("0,1"));           // false
+         * console.log(isIntegerLike("1e-1"));          // false
+         *
+         *
+         */
+        isIntegerLike: function (value) {
+            return /^-{0,1}\d+$/.test(value);
+        },
         isPlainObject: function (thing) {
             return '[object Object]' === Object.prototype.toString.call(thing);
         },
 
         isFunction: function (thing) {
             return '[object Function]' === Object.prototype.toString.call(thing);
+        },
+
+        // https://stackoverflow.com/a/63355463/405042
+        isNumeric: function (value, acceptScientificNotation) {
+            if (true !== acceptScientificNotation) {
+                return /^-{0,1}\d+(\.\d+)?$/.test(value);
+            }
+
+            if (true === Array.isArray(value)) {
+                return false;
+            }
+            return !isNaN(parseInt(value, 10));
         },
 
         mimeIsImage: function (mime) {
