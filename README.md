@@ -1,6 +1,6 @@
 JBee
 ===========
-2020-07-31 -> 2020-08-11
+2020-07-31 -> 2020-10-05
 
 
 
@@ -36,6 +36,10 @@ Or just download it and place it where you want otherwise.
 
 History Log
 =============
+
+- 1.1.1 -- 2020-10-05
+
+    - add convertHumanSizeToBytes function
 
 - 1.1.0 -- 2020-08-11
 
