@@ -37,6 +37,10 @@ Or just download it and place it where you want otherwise.
 History Log
 =============
 
+- 1.1.3 -- 2020-12-04
+
+    - Add lpi-deps.byml file
+
 - 1.1.2 -- 2020-11-24
 
     - add getValue function
