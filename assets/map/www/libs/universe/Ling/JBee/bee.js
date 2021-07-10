@@ -609,7 +609,27 @@ if ('undefined' === typeof window.bee) {
             return baseUrl;
         },
 
-
+        url_remove_params: function (url, paramsToRemove) {
+            let split = url.split('?', 2);
+            let qs = '';
+            let baseUrl = split.shift();
+            if (1 === split.length) {
+                qs = split.shift();
+            }
+            let urlParams = this.queryStringToObject(qs);
+            for(var i in paramsToRemove){
+                var key = paramsToRemove[i];
+                if(key in urlParams){
+                    delete urlParams[key];
+                }
+            }
+            var encodeParams = true;
+            let q = this.objectToQueryString(urlParams, encodeParams);
+            if (q.length > 0) {
+                baseUrl += '?' + q;
+            }
+            return baseUrl;
+        },
         //----------------------------------------
         // PRIVATE
         //----------------------------------------
