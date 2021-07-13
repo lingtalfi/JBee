@@ -42,6 +42,10 @@ Or just download it and place it where you want otherwise.
 History Log
 =============
 
+- 1.1.9 -- 2021-07-13
+
+    - fix forgot addOnResizeCallback implementation
+
 - 1.1.8 -- 2021-07-13
 
     - add addOnResizeCallback function
